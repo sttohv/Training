@@ -54,9 +54,9 @@ namespace Aids
             for (var i = 0; i < size; i++) b.Append(Char('a', 'z'));
             return b.ToString();
         }
-        internal static T GetMax<T>(T x, T y) where T : IComparable => x.CompareTo(y) > 0 ? x : y;
-        internal static T GetMin<T>(T x, T y) where T : IComparable => x.CompareTo(y) < 0 ? x : y;
-        internal static double Rnd(double minValue, double maxValue)
+        public static T GetMax<T>(T x, T y) where T : IComparable => x.CompareTo(y) > 0 ? x : y;
+        public static T GetMin<T>(T x, T y) where T : IComparable => x.CompareTo(y) < 0 ? x : y;
+        public static double Rnd(double minValue, double maxValue)
         {
             var rnd = new Random().NextDouble();
             var min = GetMin(minValue, maxValue) / 10.0;

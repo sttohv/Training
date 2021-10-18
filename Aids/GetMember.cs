@@ -20,17 +20,17 @@ namespace Aids
 
         public static string Name(Expression ex) => ex switch
         {
-            MemberExpression member => name(member),
-            MethodCallExpression method => name(method),
-            UnaryExpression operand => name(operand),
+            MemberExpression member => Name(member),
+            MethodCallExpression method => Name(method),
+            UnaryExpression operand => Name(operand),
             _ => string.Empty
         };
-        private static string name(MemberExpression e) => e?.Member.Name ?? string.Empty;
-        private static string name(MethodCallExpression e) => e?.Method.Name ?? string.Empty;
-        private static string name(UnaryExpression e) => e?.Operand switch
+        private static string Name(MemberExpression e) => e?.Member.Name ?? string.Empty;
+        private static string Name(MethodCallExpression e) => e?.Method.Name ?? string.Empty;
+        private static string Name(UnaryExpression e) => e?.Operand switch
         {
-            MemberExpression member => name(member),
-            MethodCallExpression method => name(method),
+            MemberExpression member => Name(member),
+            MethodCallExpression method => Name(method),
             _ => string.Empty
         };
     }
