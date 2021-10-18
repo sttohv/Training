@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Data
+﻿namespace Data
 {
     public sealed class TrainingCourseData: BaseData
     {
         public string Title { get; set; }
-        public string AreaDataId { get; set; }
+        public string AreaId { get; set; }
+        public int MaxPeopleInTraining { get; set; }
 
     }
 }
