@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Domain
+﻿namespace Training.Domain
 {
     public class Class1
     {

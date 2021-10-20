@@ -2,10 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Training.Infra</AssemblyName>
+    <RootNamespace>Training.Infra</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Common\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Facade\Facade.csproj" />
   </ItemGroup>
 
 </Project>

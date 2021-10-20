@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Training.Core</AssemblyName>
+    <RootNamespace>Training.Core</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aids\Aids.csproj" />
+  </ItemGroup>
 
 </Project>

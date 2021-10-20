@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests.Aids
+namespace Training.Tests.Aids
 {
     [TestClass]
     public class SafeTests

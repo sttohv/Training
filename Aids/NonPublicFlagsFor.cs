@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Aids
+namespace Training.Aids
 {
     public static class NonPublicFlagsFor
     {

@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>aspnet-Training-253A8A64-D287-40D6-80F1-48D4DA430F5B</UserSecretsId>
+    <AssemblyName>Training.Training</AssemblyName>
+    <RootNamespace>Training.Training</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
 </Project>

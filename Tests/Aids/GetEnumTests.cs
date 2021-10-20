@@ -1,7 +1,7 @@
-﻿using Aids;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Training.Aids;
 
-namespace Tests.Aids
+namespace Training.Tests.Aids
 {
     [TestClass]
     public class GetEnumTests

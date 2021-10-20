@@ -1,9 +1,9 @@
-﻿using Data;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Training.Data.Common;
 
-namespace Training.Data
+namespace Training.Training.Data
 {
     public class ApplicationDbContext : IdentityDbContext<UserData>
     {
@@ -43,6 +43,7 @@ namespace Training.Data
             {
                 entity.ToTable("UserTokens");
             });
+
         }
     }
 }

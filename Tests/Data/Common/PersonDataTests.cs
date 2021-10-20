@@ -1,15 +1,14 @@
-﻿using Aids;
-using Data;
+﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using Training.Aids;
+using Training.Data.Common;
 
-namespace Tests.Data.Common
+namespace Training.Tests.Data.Common
 {
     [TestClass]
-    public class PersonDataTests :AbstractClassTests<UserData, BaseData>
+    public class PersonDataTests : SealedClassTests<UserData, IdentityUser>
     {
-        private class testClass : UserData { }
-        protected override UserData GetObject() => GetRandom.ObjectOf<testClass>();
         [TestMethod] public void LastNameTest() => IsReadWriteProperty<string>();
         [TestMethod] public void FirstMidNameTest() => IsReadWriteProperty<string>();
         [TestMethod] public void PhotoTest() => IsReadWriteProperty<byte[]>();

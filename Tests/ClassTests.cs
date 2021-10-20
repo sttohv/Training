@@ -1,7 +1,7 @@
-﻿using Aids;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Training.Aids;
 
-namespace Tests
+namespace Training.Tests
 {
     public abstract class ClassTests<TClass, TBaseClass>
         : AbstractClassTests<TClass, TBaseClass>

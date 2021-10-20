@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pages
+﻿namespace Training.Pages
 {
     public class Class1
     {

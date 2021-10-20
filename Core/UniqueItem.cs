@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Core
+namespace Training.Core
 {
     public abstract class UniqueItem
     {

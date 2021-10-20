@@ -1,9 +1,9 @@
-﻿using Aids;
-using Core;
-using Data;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Training.Aids;
+using Training.Core;
+using Training.Data.Common;
 
-namespace Tests.Data.Common
+namespace Training.Tests.Data.Common
 {
     [TestClass]
     public class BaseDataTests : AbstractClassTests<BaseData, UniqueItem>

@@ -1,21 +1,23 @@
+using System;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Training.Data;
+using Training.Data.Common;
+using Training.Domain.Common;
+using Training.Training.Data;
 
-namespace Training
+namespace Training.Training
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+            CreateDbIfNotExists(host);
+            GetRepo.SetProvider(host.Services);
+            host.Run();
         }
 
         public static async void CreateDbIfNotExists(IHost host)
@@ -26,7 +28,8 @@ namespace Training
                 try
                 {
                     var context = services.GetService<ApplicationDbContext>();
-
+                    //var userManager = services.GetRequiredService<UserManager<UserData>>();
+                    //var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                 }
                 catch(Exception ex)
                 {

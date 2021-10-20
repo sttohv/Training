@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 
-
-namespace Aids
+namespace Training.Aids
 {
     public static class Copy
     {

@@ -1,8 +1,8 @@
-﻿using Aids;
+﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using Training.Aids;
 
-namespace Tests.Aids
+namespace Training.Tests.Aids
 {
     [TestClass]
     public class GetRandomTests

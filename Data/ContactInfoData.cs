@@ -1,4 +1,6 @@
-﻿namespace Data
+﻿using Training.Data.Common;
+
+namespace Training.Data
 {
     public sealed class ContactInfoData :BaseData
     {

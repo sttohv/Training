@@ -1,8 +1,8 @@
-﻿using Data;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Training.Data;
+using Training.Data.Common;
 
-
-namespace Tests.Data
+namespace Training.Tests.Data
 {
     [TestClass]
     public class InstructorAssignementDataTests : SealedClassTests<InstructorAssignementData, BaseData>

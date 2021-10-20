@@ -1,7 +1,6 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 
-namespace Aids
+namespace Training.Aids
 {
     public static class PublicFlagsFor
     {

@@ -1,9 +1,9 @@
-﻿using Aids;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Reflection;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Training.Aids;
 
-namespace Tests
+namespace Training.Tests
 {
     public abstract class AbstractClassTests<TClass, TBaseClass> : StaticClassTests
     where TClass : class

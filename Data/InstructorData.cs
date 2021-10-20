@@ -1,6 +1,8 @@
-﻿namespace Data
+﻿using Training.Data.Common;
+
+namespace Training.Data
 {
-    public sealed class InstructorData :UserData
+    public sealed class InstructorData
     {
        
     }

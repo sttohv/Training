@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Infra
+﻿namespace Training.Infra
 {
     public class Class1
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace Training.Tests
 {
     public abstract class SealedClassTests<TClass, TBaseClass>
         : ClassTests<TClass, TBaseClass>

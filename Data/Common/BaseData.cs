@@ -1,7 +1,7 @@
-﻿using Core;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Training.Core;
 
-namespace Data
+namespace Training.Data.Common
 {
     public abstract class BaseData : UniqueItem, IEntityData
     {

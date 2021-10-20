@@ -7,17 +7,18 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-namespace Training.Areas.Identity.Pages.Account.Manage
+using Training.Data.Common;
+namespace Training.Training.Areas.Identity.Pages.Account.Manage
 {
     public class ChangePasswordModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<UserData> _userManager;
+        private readonly SignInManager<UserData> _signInManager;
         private readonly ILogger<ChangePasswordModel> _logger;
 
         public ChangePasswordModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<UserData> userManager,
+            SignInManager<UserData> signInManager,
             ILogger<ChangePasswordModel> logger)
         {
             _userManager = userManager;

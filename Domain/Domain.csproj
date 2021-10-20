@@ -2,10 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Training.Domain</AssemblyName>
+    <RootNamespace>Training.Domain</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
 </Project>

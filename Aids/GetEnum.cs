@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aids
+namespace Training.Aids
 {
     public static class GetEnum
     {
