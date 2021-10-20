@@ -1,6 +1,6 @@
 ﻿namespace Data
 {
-    public sealed class InstructorData :PersonData
+    public sealed class InstructorData :UserData
     {
        
     }

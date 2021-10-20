@@ -4,7 +4,6 @@ namespace Aids
 {
     public static class GetEnum
     {
-
         public static int Count<T>() => Count(typeof(T));
         public static int Count(Type type)
             => Safe.Run(() => Enum.GetValues(type).Length, -1);

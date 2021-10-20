@@ -6,10 +6,10 @@ using System;
 namespace Tests.Data.Common
 {
     [TestClass]
-    public class PersonDataTests :AbstractClassTests<PersonData, BaseData>
+    public class PersonDataTests :AbstractClassTests<UserData, BaseData>
     {
-        private class testClass : PersonData { }
-        protected override PersonData GetObject() => GetRandom.ObjectOf<testClass>();
+        private class testClass : UserData { }
+        protected override UserData GetObject() => GetRandom.ObjectOf<testClass>();
         [TestMethod] public void LastNameTest() => IsReadWriteProperty<string>();
         [TestMethod] public void FirstMidNameTest() => IsReadWriteProperty<string>();
         [TestMethod] public void PhotoTest() => IsReadWriteProperty<byte[]>();

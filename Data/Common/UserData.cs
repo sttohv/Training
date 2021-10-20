@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Data
 {
-    public abstract class PersonData :BaseData
+    public abstract class UserData :BaseData
     {
         [StringLength(50)] public string LastName { get; set; }
         [StringLength(50)] public string FirstMidName { get; set; }

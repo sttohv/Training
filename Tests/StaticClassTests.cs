@@ -13,8 +13,8 @@ namespace Tests
         private const string notSpecified = "Class is not specified";
         private List<string> Members { get; set; }
         protected Type type;
-        protected string TypeName => getName();
-        private string getName()
+        protected string TypeName => GetName();
+        private string GetName()
         {
             var s = type.Name;
             var index = s.IndexOf("`", StringComparison.Ordinal);

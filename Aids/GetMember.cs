@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aids
 {
     public static class GetMember
     {
         public static string Name<TClass>(Expression<Func<TClass, object>> e)
-            => Safe.Run(() => Name(e?.Body), string.Empty);
+           => Safe.Run(() => Name(e?.Body), string.Empty);
 
         public static string Name<TClass, TResult>(Expression<Func<TClass, TResult>> e)
             => Safe.Run(() => Name(e?.Body), string.Empty);
