@@ -1,10 +1,11 @@
-﻿using Training.Data.Common;
+﻿using System.Collections.Generic;
+using Training.Data.Common;
 
 namespace Training.Data
 {
-    public sealed class AreaData:BaseData
+    public sealed class AreaData:NamedData
     {
-        public string AreaName { get; set; }
         public string AreaBossId { get; set; }
+        // public List<string> TrainingCourses { get; set; } //Kas see on õige v?
     }
 }
