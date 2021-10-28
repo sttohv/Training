@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Training.Data;
 using Training.Data.Common;
 
 namespace Training.Training.Data
@@ -11,9 +12,23 @@ namespace Training.Training.Data
             : base(options)
         {
         }
+
+        public DbSet<TrainingCourseData> TrainingCourses { get; set; }
+        public DbSet<EnrollementData> Enrollements { get; set; }
+        public DbSet<AreaData> Areas { get; set; }
+        public DbSet<InstructorAssignementData> InstructorAssignements { get; set; }
+        public DbSet<UserData> Users { get; set; }  //endale arusaamiseks, kui oled andmetabelid ära genenud, siis võid m ära kusututada
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<TrainingCourseData>().ToTable("TrainingCourse");
+            builder.Entity<EnrollementData>().ToTable("Enrollement");
+            builder.Entity<AreaData>().ToTable("Area");
+            builder.Entity<InstructorAssignementData>().ToTable("InstructorAssignements");
+            builder.Entity<UserData>().ToTable("Users");
+           
+
             builder.HasDefaultSchema("Identity");
             builder.Entity<IdentityUser>(entity =>
             {

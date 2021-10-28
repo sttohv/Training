@@ -7,7 +7,7 @@ using Training.Domain.Common;
 
 namespace Training.Domain.Repos
 {
-    public interface IUsersRepo :IRepo<User>
-    {
-    }
+    //public interface IUsersRepo :IRepo<User>
+    //{
+    //}
 }

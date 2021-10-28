@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Training.Data.Common;
 using Training.Domain.Common;
 using Training.Training.Data;
+using Training.Training.TakeToInfra;
 
 namespace Training.Training
 {
@@ -28,8 +29,9 @@ namespace Training.Training
                 try
                 {
                     var context = services.GetService<ApplicationDbContext>();
-                    //var userManager = services.GetRequiredService<UserManager<UserData>>();
-                    //var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                    var userManager = services.GetRequiredService<UserManager<UserData>>();
+                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                    await DbInitializer.SeedRolesAsync(userManager, roleManager);
                 }
                 catch(Exception ex)
                 {

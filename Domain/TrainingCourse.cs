@@ -19,12 +19,14 @@ namespace Training.Domain
             instructorAssignement = getLazy<InstructorAssignement, IInstructorAssignmentsRepo>(x => x?.Get(Id));
         }
 
+        public string Title => Data?.Title ?? "Unspecified";
         public string AreaId => Data?.AreaId ?? "Unspecified";
+        public int MaxPeopleInTraining => Data?.MaxPeopleInTraining ?? 0;
+
         public Area Area => area.Value;
         internal Lazy<Area> area { get; }
 
         public ICollection<Enrollement> Enrollments => enrollements.Value;
-
         internal Lazy<ICollection<Enrollement>> enrollements { get; }
 
 
