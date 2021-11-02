@@ -8,7 +8,7 @@ namespace Training.Tests.Data
     public class InstructorAssignementDataTests : SealedClassTests<InstructorAssignementData, BaseData>
     {
         [TestMethod] public void TrainingCourseIdTest() => IsReadWriteProperty<string>();
-        [TestMethod] public void PersonIdTest() => IsReadWriteProperty<string>();
+        [TestMethod] public void UserIdTest() => IsReadWriteProperty<string>();
         [TestMethod] public void LocationTest() => IsReadWriteProperty<string>();
 
     }

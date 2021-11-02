@@ -6,23 +6,19 @@ using Training.Domain.Repos;
 
 namespace Training.Domain.Common
 {
-    public interface IUserEntity : IBaseEntity
+    //public interface IUserEntity : IBaseEntity
+    //{
+    //    public string LastName { get; }
+    //    public string FirstMidName { get; }
+    //   public string FullName { get; }
+    //}
+    //public abstract class User<TData> : BaseEntity<TData>, IUserEntity
+    //    where TData : UserData, new()
+    
+    public sealed class User : BaseEntity<UserData>
     {
-        public string LastName { get; }
-        public string FirstMidName { get; }
-       public string FullName { get; }
-    }
-    public abstract class User<TData> : BaseEntity<TData>, IUserEntity
-        where TData : UserData, new()
-    {
-        public string LastName => throw new NotImplementedException();
-
-        public string FirstMidName => throw new NotImplementedException();
-
-        public string FullName => throw new NotImplementedException();
-
-        public sealed class User : BaseEntity<UserData> { 
-        where TData :UserData, new()
+        //public sealed class User : BaseEntity<UserData> { 
+        //where TData :UserData, new()
         public User() : this(null) { }
         public User(UserData d) : base(d) { 
             enrollements = getLazy<Enrollement, IEnrollementsRepo>(x => x?.GetByUserId(Id));
@@ -33,7 +29,8 @@ namespace Training.Domain.Common
 
         public string LastName => Data?.LastName ?? "Unspecified";
         public string FirstMidName => Data?.FirstMidName ?? "Unspecified";
-       // public string ContactInfoId => Data?.ContactInfoId ?? "Unspecified";
+        // public string ContactInfoId => Data?.ContactInfoId ?? "Unspecified";
+        public byte[] Photo => Data?.Photo ?? new List<byte>().ToArray();
         public string AreadId => Data?.AreadId ?? "Unspecified";
 
         public string FullName

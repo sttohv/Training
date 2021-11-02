@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Training.Aids;
 using Training.Data.Common;
 
-namespace Training.Tests.Data.Common
+namespace Training.Tests.Data
 {
     [TestClass]
-    public class PersonDataTests : SealedClassTests<UserData, IdentityUser>
+    public class UserDataTests : SealedClassTests<UserData, IdentityUser>
     {
         [TestMethod] public void LastNameTest() => IsReadWriteProperty<string>();
         [TestMethod] public void FirstMidNameTest() => IsReadWriteProperty<string>();

@@ -5,9 +5,8 @@ using Training.Data.Common;
 namespace Training.Tests.Data
 {
     [TestClass]
-    public class AreaDataTests: SealedClassTests<AreaData, BaseData>
+    public class AreaDataTests: SealedClassTests<AreaData, NamedData>
     {
-        [TestMethod] public void AreaNameTest() => IsReadWriteProperty<string>();
         [TestMethod] public void AreaBossIdTest() => IsReadWriteProperty<string>();
     }
 }

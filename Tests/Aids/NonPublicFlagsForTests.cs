@@ -3,7 +3,7 @@
 namespace Training.Tests.Aids
 {
     [TestClass]
-    class NonPublicFlagsForTests
+    public class NonPublicFlagsForTests
     {
     }
 }
