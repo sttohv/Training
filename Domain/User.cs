@@ -44,8 +44,8 @@ namespace Training.Domain.Common
         public ICollection<Enrollement> Enrollments => enrollements.Value;
         internal Lazy<ICollection<Enrollement>> enrollements { get; }
 
-        public ContactInfo ContactInfo => contactInfo.Value;
-        public Lazy<ContactInfo> contactInfo { get; }
+        //public ContactInfo ContactInfo => contactInfo.Value;
+        //public Lazy<ContactInfo> contactInfo { get; }
 
         public Area Area => area.Value;
         public Lazy<Area> area { get; }
