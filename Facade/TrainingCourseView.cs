@@ -8,6 +8,8 @@ namespace Training.Facade
     {
         public string Title { get; set; }
         [Display(Name = "Area")] public string AreaId { get; set; }
+        [Display(Name = "Area")] public string AreaName { get; set; }
+
         [Range(0, 100)] public int MaxPeopleInTraining { get; set; }
         
         [DisplayFormat(DataFormatString = "{dd / MMM / yyyy HH: mm}", ApplyFormatInEditMode = true)]

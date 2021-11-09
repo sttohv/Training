@@ -12,12 +12,13 @@ namespace Training.Domain
 
         public Area(AreaData d) : base(d)
         {
-            //areaBoss = getLazy<User, IUsersRepo>(x => x?.Get(AreaBossId));
+            areaBoss = getLazy<User, IUsersRepo>(x => x?.Get(AreaBossId));
         }
         public string AreaBossId => Data?.AreaBossId ?? "Unspecified";
+        
 
-        //public User AreaBoss => areaBoss.Value;
-        //internal Lazy<User> areaBoss { get; }
+        public User AreaBoss => areaBoss.Value;
+        internal Lazy<User> areaBoss { get; }
 
     }
 }
