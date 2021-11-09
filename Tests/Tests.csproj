@@ -21,11 +21,11 @@
     <ProjectReference Include="..\Aids\Aids.csproj" />
     <ProjectReference Include="..\Data\Data.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Facade\Facade.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Domain\Repos\" />
-    <Folder Include="Facade\" />
     <Folder Include="Infra\" />
     <Folder Include="Training\" />
     <Folder Include="Pages\" />

@@ -14,8 +14,7 @@ namespace Training.Data.Common
         public DateTime? ValidTo { get; set; }
        // public string ContactInfoId { get; set; }  //
         public string AreadId { get; set; } //mis ma teen kui seda on vaja ainult töötajal  default null ja kui töötaja, siis tal võimalik see lisada  
-        public byte[] RowVersion { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        byte[] IBaseEntity.RowVersion => throw new NotImplementedException();
+        public byte[] RowVersion { get; set; }
         // ja kui tal mitu trenni nkn, siis oleks list
     }
 }

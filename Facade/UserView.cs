@@ -2,14 +2,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using Training.Facade.Common;
-using Microsoft.AspNetCore.Identity;
-using Training.Core;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Training.Facade
 {
+    //TODO: something
     public abstract class UserView : IdentityUser, IBaseEntityView
     {
-        //@TO-DO
+
         [Required]
         [StringLength(50, ErrorMessage = "Last name cannot be longer than 50 characters.")]
         [Display(Name = "Last Name")]
@@ -38,7 +38,7 @@ namespace Training.Facade
         [Display(Name = "Contact Ending Date")]
         public DateTime ValidTo { get; set; }
        
-        public string Id { get; set; }
+        //public string Id { get; set; }
         public byte[] RowVersion { get; set; }
 
         //string IBaseEntity.Id => throw new NotImplementedException();

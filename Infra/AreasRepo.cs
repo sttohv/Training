@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Training.Data;
+using Training.Infra.Common;
 
-namespace Training.Data
+namespace Training.Infra
 {
-    public enum UserRolesEnum
+    public sealed class AreasRepo
     {
-        Visitor, Client, Employee  
     }
 }

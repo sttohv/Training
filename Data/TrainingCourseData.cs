@@ -1,4 +1,5 @@
-﻿using Training.Data.Common;
+﻿using System;
+using Training.Data.Common;
 
 namespace Training.Data
 {
@@ -7,6 +8,7 @@ namespace Training.Data
         public string Title { get; set; }
         public string AreaId { get; set; }
         public int MaxPeopleInTraining { get; set; }
+        public DateTime? CourseTime { get; set; }
 
     }
 }

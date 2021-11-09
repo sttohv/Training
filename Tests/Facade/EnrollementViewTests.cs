@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Training.Data
+namespace Training.Tests.Facade
 {
-    public enum UserRolesEnum
+    class EnrollementViewTests
     {
-        Visitor, Client, Employee  
     }
 }
