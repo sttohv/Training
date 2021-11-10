@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Training.Data;
 using Training.Domain;
+using Training.Domain.Repos;
 using Training.Infra.Common;
 
 namespace Training.Infra
 {
-    public sealed class InstructorAssignementsRepo : PagedRepo<InstructorAssignement, InstructorAssignementData>, IInstructorAssignementRepo
+    public sealed class InstructorAssignementsRepo : PagedRepo<InstructorAssignement, InstructorAssignementData>, IInstructorAssignementsRepo
     {
         public InstructorAssignementsRepo() : this(null) { }
         public InstructorAssignementsRepo(ApplicationDbContext c) : base(c, c?.InstructorAssignements) { }
