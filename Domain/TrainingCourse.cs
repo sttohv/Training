@@ -16,7 +16,7 @@ namespace Training.Domain
         {
             area = getLazy<Area, IAreasRepo>(x => x?.Get(AreaId));
             enrollements = getLazy<Enrollement, IEnrollementsRepo>(x => x?.GetByTrainingCourseId(Id));
-            instructorAssignement = getLazy<InstructorAssignement, IInstructorAssignmentsRepo>(x => x?.Get(Id));
+            instructorAssignement = getLazy<InstructorAssignement, IInstructorAssignementsRepo>(x => x?.Get(Id));
         }
 
         public string Title => Data?.Title ?? "Unspecified";

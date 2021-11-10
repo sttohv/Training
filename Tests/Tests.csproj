@@ -25,7 +25,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\Repos\" />
     <Folder Include="Infra\" />
     <Folder Include="Training\" />
     <Folder Include="Pages\" />
