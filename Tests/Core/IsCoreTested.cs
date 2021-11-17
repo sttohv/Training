@@ -11,6 +11,6 @@ namespace Training.Tests.Core
     public class IsCoreTested : AssemblyBaseTests
     {
         public IsCoreTested()
-            : base($"{nameof(Training)}.{nameof(Training.Core)}") { }
+            : base($"{nameof(Training)}.{nameof(Core)}") { }
     }
 }

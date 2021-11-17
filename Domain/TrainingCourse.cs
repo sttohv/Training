@@ -22,7 +22,7 @@ namespace Training.Domain
         public string Title => Data?.Title ?? "Unspecified";
         public string AreaId => Data?.AreaId ?? "Unspecified";
         public int MaxPeopleInTraining => Data?.MaxPeopleInTraining ?? 0;
-        public DateTime? CourseTime => Data?.CourseTime; //kas siin peab olema max value v min value
+        public DateTime? CourseTime => Data?.CourseTime; //kas siin peab olema max value v min value - pole vahet, seda ei pea isegi olema
 
         public Area Area => area.Value;
 

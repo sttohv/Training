@@ -10,7 +10,7 @@ namespace Training.Domain
         public Enrollement() : this(null) { }
         public Enrollement(EnrollementData d) : base(d)
         {
-           // user = getLazy<User, IUsersRepo>(x => x?.Get(UserId));
+            user = getLazy<User, IUsersRepo>(x => x?.Get(UserId));
             trainingCourse = getLazy<TrainingCourse, ITrainingCoursesRepo>(x => x?.Get(TrainingCourseId));
         }
          public string UserId => Data?.UserId ?? "Unspecified";
