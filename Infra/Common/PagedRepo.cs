@@ -8,7 +8,7 @@ using Training.Domain.Repos;
 namespace Training.Infra.Common
 {
     public abstract class PagedRepo<TEntity, TData> : OrderedRepo<TEntity, TData>, IRepo<TEntity>
-        where TData : BaseData, IEntityData, new()
+        where TData : class, IEntityData, new()
     {
         private int pageIndex;
 

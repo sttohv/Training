@@ -10,7 +10,7 @@ using Training.Data.Common;
 namespace Training.Infra.Common
 {
     public abstract class CrudRepo<TEntity, TData> : BaseRepo<TData>
-       where TData : BaseData, IEntityData, new()
+       where TData : class, IEntityData, new()
     {
         protected CrudRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s) { }
 

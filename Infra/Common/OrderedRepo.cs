@@ -11,7 +11,7 @@ using Training.Domain.Repos;
 namespace Training.Infra.Common
 {
     public abstract class OrderedRepo<TEntity, TData> : FilteredRepo<TEntity, TData>, IOrderedRepo
-        where TData : BaseData, IEntityData, new()
+        where TData : class, IEntityData, new()
     {
         private string sortOrder;
         protected OrderedRepo(DbContext c = null, DbSet<TData> s = null) : base(c, s) { }

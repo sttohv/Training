@@ -5,8 +5,10 @@ namespace Training.Domain.Common
 {
     public sealed class GetRepo
     {
-        internal readonly IServiceProvider provider;
-        internal static IServiceProvider instance;
+        //mõlemad kaks olid internalid enne, aga testides ei tööta
+        public readonly IServiceProvider provider;
+        public static IServiceProvider instance;
+
         public GetRepo() : this(null) { }
         public GetRepo(IServiceProvider p) => provider = p ?? instance;
         public static void SetProvider(IServiceProvider p) => instance = p;

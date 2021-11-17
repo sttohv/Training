@@ -25,13 +25,19 @@ namespace Training.Domain
         public DateTime? CourseTime => Data?.CourseTime; //kas siin peab olema max value v min value
 
         public Area Area => area.Value;
-        internal Lazy<Area> area { get; }
 
+        //testid ei tööta, kui see internal on :)))))))
+        public Lazy<Area> area { get; }
+
+        public ICollection<User> Users => Enrollments?.Select(x => x.User).ToList();
         public ICollection<Enrollement> Enrollments => enrollements.Value;
-        internal Lazy<ICollection<Enrollement>> enrollements { get; }
+        
+        //oli enne internal
+        public Lazy<ICollection<Enrollement>> enrollements { get; }
 
 
         public InstructorAssignement InstructorAssignement => instructorAssignement.Value;
-        internal Lazy<InstructorAssignement> instructorAssignement { get; }
+        //oli enne internal
+        public Lazy<InstructorAssignement> instructorAssignement { get; }
     }
 }

@@ -10,7 +10,7 @@ using Training.Data.Common;
 namespace Training.Infra.Common
 {
     public abstract class BaseRepo<T>
-        where T : BaseData, IEntityData, new()
+        where T : class, IEntityData, new()
     {
         protected internal readonly DbSet<T> dbSet;
         protected internal readonly DbContext db;

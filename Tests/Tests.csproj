@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Training\**" />
+    <EmbeddedResource Remove="Training\**" />
+    <None Remove="Training\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.2.3" />
     <PackageReference Include="MSTest.TestFramework" Version="2.2.3" />
@@ -19,15 +25,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aids\Aids.csproj" />
-    <ProjectReference Include="..\Data\Data.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
-    <ProjectReference Include="..\Facade\Facade.csproj" />
+    <ProjectReference Include="..\Training\Training.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Infra\" />
-    <Folder Include="Training\" />
-    <Folder Include="Pages\" />
+    <Folder Include="Infra\Common\" />
+    <Folder Include="Pages\Common\" />
   </ItemGroup>
 
 </Project>

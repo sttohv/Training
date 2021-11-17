@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using Training.Core;
 using Training.Data.Common;
+using Training.Domain.Common;
 using Training.Domain.Repos;
 
-namespace Training.Domain.Common
+namespace Training.Domain
 {
     //public interface IUserEntity : IBaseEntity
     //{

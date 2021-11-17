@@ -2,12 +2,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using Training.Facade.Common;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity;
 
 namespace Training.Facade
 {
     //TODO: something
-    public abstract class UserView : IdentityUser, IBaseEntityView
+    public sealed class UserView : IdentityUser, IBaseEntityView
     {
 
         [Required]

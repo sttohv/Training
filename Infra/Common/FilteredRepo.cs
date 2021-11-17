@@ -7,7 +7,7 @@ using Training.Domain.Repos;
 namespace Training.Infra.Common
 {
     public abstract class FilteredRepo<TEntity, TData> : CrudRepo<TEntity, TData>, IFilteredRepo
-        where TData : BaseData, IEntityData, new()
+        where TData : class, IEntityData, new()
     {
         private string currentFilter;
         private string searchString;
