@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Training.Data.Common;
-using Training.Training.Data;
+using Training.Infra;
 
 namespace Training.Training
 {

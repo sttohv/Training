@@ -12,5 +12,6 @@ namespace Training.Facade
     {
         [Display(Name = "Training course")] public string TrainingCourseId { get; set; }
         [Display(Name = "User")] public string UserId { get; set; }
+        [Display(Name = "Course Title")]public string TrainingCourseTitle { get; set; }
     }
 }

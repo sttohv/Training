@@ -16,6 +16,8 @@ namespace Training.Domain
          public string UserId => Data?.UserId ?? "Unspecified";
         public string TrainingCourseId => Data?.TrainingCourseId ?? "Unspecified";
 
+        public string TrainingCourseTitle => TrainingCourse?.Title ?? string.Empty;
+
         public User User => user.Value;
         internal Lazy<User> user { get; }
 

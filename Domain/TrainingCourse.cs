@@ -27,17 +27,17 @@ namespace Training.Domain
         public Area Area => area.Value;
 
         //testid ei tööta, kui see internal on :)))))))
-        public Lazy<Area> area { get; }
+        internal Lazy<Area> area { get; }
 
         public ICollection<User> Users => Enrollments?.Select(x => x.User).ToList();
         public ICollection<Enrollement> Enrollments => enrollements.Value;
         
         //oli enne internal
-        public Lazy<ICollection<Enrollement>> enrollements { get; }
+        internal Lazy<ICollection<Enrollement>> enrollements { get; }
 
 
         public InstructorAssignement InstructorAssignement => instructorAssignement.Value;
         //oli enne internal
-        public Lazy<InstructorAssignement> instructorAssignement { get; }
+        internal Lazy<InstructorAssignement> instructorAssignement { get; }
     }
 }

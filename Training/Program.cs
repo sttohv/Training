@@ -6,8 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Training.Data.Common;
 using Training.Domain.Common;
-using Training.Training.Data;
-using Training.Training.TakeToInfra;
+using Training.Infra;
+using Training.Infra.Common;
 
 namespace Training.Training
 {

@@ -16,7 +16,7 @@ namespace Training.Infra
         public DbSet<EnrollementData> Enrollements { get; set; }
         public DbSet<AreaData> Areas { get; set; }
         public DbSet<InstructorAssignementData> InstructorAssignements { get; set; }
-        public DbSet<UserData> Users { get; set; }  //endale arusaamiseks, kui oled andmetabelid ära genenud, siis võid m ära kusututada
+        //public DbSet<UserData> Users { get; set; }  //endale arusaamiseks, kui oled andmetabelid ära genenud, siis võid m ära kusututada
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -26,7 +26,7 @@ namespace Training.Infra
             builder.Entity<EnrollementData>().ToTable("Enrollement");
             builder.Entity<AreaData>().ToTable("Area");
             builder.Entity<InstructorAssignementData>().ToTable("InstructorAssignements");
-            builder.Entity<UserData>().ToTable("Users");
+           //builder.Entity<UserData>().ToTable("Users");
 
 
             builder.HasDefaultSchema("Identity");
