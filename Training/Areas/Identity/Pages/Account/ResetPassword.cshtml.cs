@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
-using Training.Data.Common;
+using Training.Data;
 
 namespace Training.Training.Areas.Identity.Pages.Account
 {

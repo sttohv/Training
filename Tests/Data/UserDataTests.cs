@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Training.Aids;
-using Training.Data.Common;
+using Training.Data;
 
 namespace Training.Tests.Data
 {

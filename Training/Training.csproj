@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Areas\" />
     <Folder Include="Pages\Instructors\" />
     <Folder Include="Pages\TrainingCourses\" />
     <Folder Include="Pages\Users\" />

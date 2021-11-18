@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Training.Aids;
-using Training.Data.Common;
+using Training.Data;
 using Training.Domain;
 using Training.Domain.Common;
 

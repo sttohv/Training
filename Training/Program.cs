@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Training.Data.Common;
+using Training.Data;
 using Training.Domain.Common;
 using Training.Infra;
 using Training.Infra.Common;
@@ -16,6 +16,7 @@ namespace Training.Training
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+
             CreateDbIfNotExists(host);
             GetRepo.SetProvider(host.Services);
             host.Run();
@@ -40,6 +41,7 @@ namespace Training.Training
                 }
             }
         }
+
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

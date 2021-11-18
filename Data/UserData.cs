@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 using Training.Core;
 
-namespace Training.Data.Common
+namespace Training.Data
 {
     public sealed class UserData : IdentityUser, IEntityData  //kus ma referencen Identyt, Enne oli :IdentityUser
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Training.Data.Common;
+using Training.Data;
 using Training.Domain;
 using Training.Domain.Repos;
 using Training.Infra.Common;

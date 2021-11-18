@@ -11,6 +11,8 @@ namespace Training.Infra.Common
     {
         public static async Task SeedRolesAsync(UserManager<UserData> userManager, RoleManager<IdentityRole> roleManager)
         {
+
+            await roleManager.CreateAsync(new IdentityRole(UserRolesEnum.Visitor.ToString()));
             await roleManager.CreateAsync(new IdentityRole(UserRolesEnum.Client.ToString()));
             await roleManager.CreateAsync(new IdentityRole(UserRolesEnum.Employee.ToString()));
              }

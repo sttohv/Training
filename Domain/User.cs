@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Training.Core;
-using Training.Data.Common;
+using Training.Data;
 using Training.Domain.Common;
 using Training.Domain.Repos;
 

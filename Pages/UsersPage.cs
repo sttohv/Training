@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Training.Aids;
-using Training.Data.Common;
+using Training.Data;
 using Training.Domain;
 using Training.Domain.Common;
 using Training.Domain.Repos;
