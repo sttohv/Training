@@ -10,8 +10,8 @@ using Training.Infra;
 namespace Training.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211118212437_Renamed Identity Table Names")]
-    partial class RenamedIdentityTableNames
+    [Migration("20211122195227_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

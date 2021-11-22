@@ -8,6 +8,6 @@ namespace Training.Data
 {
     public enum UserRolesEnum
     {
-        Visitor, Client, Employee  
+        Visitor, Client, Employee, SuperAdmin
     }
 }
