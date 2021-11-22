@@ -10,7 +10,7 @@ using Training.Infra;
 namespace Training.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211122195227_InitialCreate")]
+    [Migration("20211122203947_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

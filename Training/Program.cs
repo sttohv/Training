@@ -18,31 +18,13 @@ namespace Training.Training
         //var host = CreateHostBuilder(args).Build();
 
 
-        public async static Task Main(string[] args)
+        public static void Main(string[] args)
         {
-            
-            //GetRepo.SetProvider(host.Services);
-            //host.Run();
             var host = CreateHostBuilder(args).Build();
             CreateDbIfNotExists(host);
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-                try
-                {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
-                    var userManager = services.GetRequiredService<UserManager<UserData>>();
-                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                    await DbInitializer.SeedRolesAsync(userManager, roleManager);
-                }
-                catch (Exception ex)
-                {
-                    var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(ex, "An error occurred seeding the DB.");
-                }
-            }
+            GetRepo.SetProvider(host.Services);
             host.Run();
+       
         }
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
@@ -63,6 +45,9 @@ namespace Training.Training
                     var userManager = services.GetRequiredService<UserManager<UserData>>();
                     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await DbInitializer.SeedRolesAsync(userManager, roleManager);
+
+                    await DbInitializer.SeedSuperAdminAsync(userManager, roleManager);
+                    DbInitializer.Initialize(services.GetService<ApplicationDbContext>());
                 }
                 catch(Exception ex)
                 {
