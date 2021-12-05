@@ -3,9 +3,6 @@ using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Threading.Tasks;
 using Training.Data;
-using Training.Data.Common;
-using Training.Domain;
-//using Training.Training.Data;
 
 namespace Training.Infra.Common
 {

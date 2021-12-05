@@ -12,14 +12,8 @@ namespace Training.Infra
         public UsersRepo() : this(null) { }
 
         public UsersRepo(ApplicationDbContext c) :base(c, c?.Users) { }
-        protected internal override User toEntity(UserData d)
-        {
-            throw new NotImplementedException();
-        }
-        protected internal override UserData toData(User e)
-        {
-            throw new NotImplementedException();
-        }
+        protected internal override User toEntity(UserData d) => new(d);
+        protected internal override UserData toData(User e) => e?.Data ?? new UserData();
 
         protected internal override IQueryable<UserData> applyFilters(IQueryable<UserData> query)
         {
