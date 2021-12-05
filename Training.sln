@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pages", "Pages\Pages.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{0D590BC2-3BD0-4C93-B504-19822CE24F3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training", "Training\Training.csproj", "{37A7DEFB-E0DA-4683-B40F-8703826CF833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Training", "Training\Training.csproj", "{37A7DEFB-E0DA-4683-B40F-8703826CF833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

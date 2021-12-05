@@ -6,8 +6,10 @@ namespace Training.Facade
 {
     public sealed class TrainingCourseView:NamedView
     {
-        public string Title { get; set; }
+        //nimi on juba olemas named view-s
+        //public string Title { get; set; }
         [Display(Name = "Area")] public string AreaId { get; set; }
+        
         [Display(Name = "Area")] public string AreaName { get; set; }
 
         [Range(0, 100)] public int MaxPeopleInTraining { get; set; }

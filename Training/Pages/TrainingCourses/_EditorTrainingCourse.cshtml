@@ -1,0 +1,9 @@
+﻿@using Core.Extensions
+@model Pages.TrainingCoursesPage
+
+@Html.Editor(model => model.Item.Name)
+@Html.Editor(model => model.Item.MaxPeopleInTraining)
+@Html.Editor(model => model.Item.CourseTime)
+@Html.Editor(model => model.Item.AreaName)
+@Html.Select(model => model.Item.AreaId,
+    Model.Areas, "-- Select Area --")
