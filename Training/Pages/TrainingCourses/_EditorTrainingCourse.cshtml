@@ -1,7 +1,7 @@
 ﻿@using Core.Extensions
 @model Pages.TrainingCoursesPage
 
-@Html.Editor(model => model.Item.Name)
+@Html.Editor(model => model.Item.Title)
 @Html.Editor(model => model.Item.MaxPeopleInTraining)
 @Html.Editor(model => model.Item.CourseTime)
 @Html.Select(model => model.Item.AreaId,

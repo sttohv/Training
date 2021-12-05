@@ -25,8 +25,6 @@ namespace Training.Domain
         public DateTime? CourseTime => Data?.CourseTime; //kas siin peab olema max value v min value - pole vahet, seda ei pea isegi olema
 
         public Area Area => area.Value;
-
-        //testid ei tööta, kui see internal on :)))))))
         internal Lazy<Area> area { get; }
 
         public ICollection<User> Users => Enrollments?.Select(x => x.User).ToList();

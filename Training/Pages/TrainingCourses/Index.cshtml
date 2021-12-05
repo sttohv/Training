@@ -1,60 +1,30 @@
 ﻿@page
-@model Training.Pages.TrainingCourses.IndexModel
+@model Pages.TrainingCoursesPage
+@using Core.Extensions
 
-@{
-    ViewData["Title"] = "Training Courses";
-}
+@{ Layout = "_Index"; }
 
-<h1>Training Courses</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TrainingCourseData[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrainingCourseData[0].AreaId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrainingCourseData[0].MaxPeopleInTraining)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrainingCourseData[0].CourseTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TrainingCourseData[0].RowVersion)
-            </th>
+            @Html.TableSortHeader(x => x.Item.Title, Model)
+            @Html.TableSortHeader(x => x.Item.MaxPeopleInTraining, Model)
+            @Html.TableSortHeader(x => x.Item.CourseTime, Model)
+            @Html.TableHeader(x => x.Item.AreaId)
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.TrainingCourseData) {
+        @foreach (var i in Model.Items)
+        {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AreaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaxPeopleInTraining)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RowVersion)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+            @Html.RowData(x => i.Title)
+            @Html.RowData(x => i.MaxPeopleInTraining)
+            @Html.RowData(x => i.CourseTime)
+            @Html.RowData(x => i.AreaId)
+            @Html.RowButtons(Model.PageUrl, $"{i.Id}")
+        </tr>}
     </tbody>
+
 </table>

@@ -4,10 +4,10 @@ using Training.Facade.Common;
 
 namespace Training.Facade
 {
-    public sealed class TrainingCourseView:NamedView
+    public sealed class TrainingCourseView:BaseView
     {
         //nimi on juba olemas named view-s
-        //public string Title { get; set; }
+        public string Title { get; set; }
         [Display(Name = "Area")] public string AreaId { get; set; }
         
         [Display(Name = "Area")] public string AreaName { get; set; }
