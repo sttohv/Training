@@ -14,8 +14,10 @@ namespace Training.Facade
 
         [Range(0, 100)] public int MaxPeopleInTraining { get; set; }
         
-        [DisplayFormat(DataFormatString = "{dd / MMM / yyyy HH: mm}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date)]
+        //järgnev rida teeb kõik katki
+        //[DisplayFormat(DataFormatString = "{dd/MM/yyyy HH:mm}", ApplyFormatInEditMode = true)]
+
+        //[DataType(DataType.Date)]
         [Display(Name = "Date")] public DateTime? CourseTime { get; set; }
 
     }

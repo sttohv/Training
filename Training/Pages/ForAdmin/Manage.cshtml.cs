@@ -72,7 +72,7 @@ namespace Training.Training.Pages.ForAdmin
                 ModelState.AddModelError("", "Cannot add selected roles to user");
                 return Page();
             }
-            return RedirectToPage("./userroles");
+            return RedirectToPage("./UserRolesModel");
         }
     }
 }

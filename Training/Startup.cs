@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Training.Data;
+using Training.Domain.Repos;
 using Training.Infra;
 
 namespace Training.Training
@@ -39,6 +40,12 @@ namespace Training.Training
                     .AddDefaultTokenProviders();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddTransient<IAreasRepo, AreasRepo>();
+            services.AddTransient<IEnrollementsRepo, EnrollementsRepo>();
+            services.AddTransient<IInstructorAssignementsRepo, InstructorAssignementsRepo>();
+            services.AddTransient<ITrainingCoursesRepo, TrainingCoursesRepo>();
+            services.AddTransient<IUsersRepo, UsersRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
