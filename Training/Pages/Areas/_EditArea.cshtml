@@ -1,0 +1,6 @@
+﻿@model Pages.AreasPage
+@using Core.Extensions
+
+@Html.Editor(model => model.Item.Name)
+@Html.Select(model => model.Item.AreaBossId,
+    Model.AreaBosses, "-- Select Area Boss --")

@@ -1,0 +1,61 @@
+﻿@page
+@model Training.Pages.ForAdmin.RoleManagerModel
+
+@{
+    ViewData["Title"] = "Rolli haldus";
+}
+
+<h1>Role Manager</h1>
+
+<form method="post" asp-page-handler="Create">
+    <div class="input-group">
+        <input name="roleName" class="form-control w-25">
+        <span class="input-group-btn">
+            <button class="btn btn-info">Add new role</button>
+        </span>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AllRoles[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllRoles[0].Name)
+            </th>
+
+            <th>
+                <label class="control-label" style="text-align:center">New name</label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AllRoles)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    <form method="post" asp-page-handler="Edit" asp-route-id="@item.Id">
+                        <input name="roleNewName" class="form-control2">
+                        <button class="btn btn-primary">Edit</button>
+                    </form>
+                </td>
+
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@item.Id">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

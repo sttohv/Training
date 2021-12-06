@@ -1,0 +1,47 @@
+﻿@page
+@model Training.Pages.ForAdmin.UserRolesModel
+@{
+    ViewData["Title"] = "User Roles";
+}
+
+<h1>User roles</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.userRolesViewModel[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userRolesViewModel[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.userRolesViewModel[0].Email)
+            </th>
+            <th style="align-content: center">
+                @Html.DisplayNameFor(model => model.userRolesViewModel[0].Roles)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.userRolesViewModel)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>@string.Join(" , ", item.Roles.ToList())</td>
+                <td>
+                    <a class="btn btn-primary" asp-page="./Manage" asp-route-handler="Manage" asp-route-userId="@item.Id">Manage roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

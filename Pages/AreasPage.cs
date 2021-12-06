@@ -13,7 +13,7 @@ namespace Training.Pages
 {
     public class AreasPage : ViewPage<Area, AreaView>
     {
-        public override string PageTitle => "Departments";
+        public override string PageTitle => "Area";
         public AreasPage(ApplicationDbContext c) : this(new AreasRepo(c), c) { }
         protected internal AreasPage(IAreasRepo r, ApplicationDbContext c = null) : base(r, c) { }
         protected internal override AreaView toViewModel(Area d)
@@ -28,7 +28,7 @@ namespace Training.Pages
             var d = Copy.Members(v, new AreaData());
             return new Area(d);
         }
-        public SelectList Instructors =>
+        public SelectList AreaBosses =>
             new(context.Users.OrderBy(x => x.LastName).AsNoTracking(),
                 "Id", "LastName", Item?.AreaBossId);
     }
