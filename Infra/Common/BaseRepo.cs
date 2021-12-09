@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Training.Aids;
 using Training.Core;
-using Training.Data.Common;
 
 namespace Training.Infra.Common
 {

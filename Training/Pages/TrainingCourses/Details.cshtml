@@ -1,5 +1,5 @@
 ﻿@page
-@model Training.Pages.TrainingCourses.DetailsModel
+@model Pages.TrainingCoursesPage
 
 @{
     ViewData["Title"] = "Details";
@@ -12,38 +12,38 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TrainingCourseData.Title)
+            @Html.DisplayNameFor(model => model.Item.Title)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TrainingCourseData.Title)
+            @Html.DisplayFor(model => model.Item.Title)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TrainingCourseData.AreaId)
+            @Html.DisplayNameFor(model => model.Item.AreaId)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TrainingCourseData.AreaId)
+            @Html.DisplayFor(model => model.Item.AreaId)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TrainingCourseData.MaxPeopleInTraining)
+            @Html.DisplayNameFor(model => model.Item.MaxPeopleInTraining)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TrainingCourseData.MaxPeopleInTraining)
+            @Html.DisplayFor(model => model.Item.MaxPeopleInTraining)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TrainingCourseData.CourseTime)
+            @Html.DisplayNameFor(model => model.Item.CourseTime)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TrainingCourseData.CourseTime)
+            @Html.DisplayFor(model => model.Item.CourseTime)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.TrainingCourseData.RowVersion)
+            @Html.DisplayNameFor(model => model.Item.RowVersion)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.TrainingCourseData.RowVersion)
+            @Html.DisplayFor(model => model.Item.RowVersion)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.TrainingCourseData.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-handler="Edit" asp-route-id="@Model.Item.Id">Edit</a> |
+    <a asp-page="./Index" asp-route-handler="Index">Back to List</a>
 </div>

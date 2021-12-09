@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Users\**" />
+    <Content Remove="Pages\Users\**" />
+    <EmbeddedResource Remove="Pages\Users\**" />
+    <None Remove="Pages\Users\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.11" />
@@ -26,7 +33,6 @@
   <ItemGroup>
     <Folder Include="Areas\Identity\Pages\Client\" />
     <Folder Include="Areas\Identity\Pages\Trainers\" />
-    <Folder Include="Pages\Users\" />
   </ItemGroup>
 
 </Project>

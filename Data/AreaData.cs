@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Training.Data.Common;
+﻿using Training.Data.Common;
 
 namespace Training.Data
 {

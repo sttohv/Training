@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Training.Aids;
 using Training.Data;
 
 namespace Training.Tests.Data

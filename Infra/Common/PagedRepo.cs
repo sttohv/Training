@@ -2,7 +2,6 @@
 using System;
 using System.Linq;
 using Training.Core;
-using Training.Data.Common;
 using Training.Domain.Repos;
 
 namespace Training.Infra.Common

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Training.Core;
-using Training.Data.Common;
 
 namespace Training.Infra.Common
 {

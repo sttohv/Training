@@ -1,40 +1,44 @@
 ﻿@page
-@model Training.Pages.Areas.EditModel
+@model Pages.AreasPage
 
-@{
-    ViewData["Title"] = "Edit";
-}
+@{ Layout = "_Edit"; }
+<partial name="_EditArea" />
 
-<h1>Edit</h1>
+@*@{
+        ViewData["Title"] = "Edit";
+    }
 
-<h4>AreaData</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AreaData.AreaBossId" class="control-label"></label>
-                <input asp-for="AreaData.AreaBossId" class="form-control" />
-                <span asp-validation-for="AreaData.AreaBossId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AreaData.Name" class="control-label"></label>
-                <input asp-for="AreaData.Name" class="form-control" />
-                <span asp-validation-for="AreaData.Name" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="AreaData.Id" />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    <h1>Edit</h1>
+
+    <h4>AreaData</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Item.AreaBossId" class="control-label"></label>
+                    <input asp-for="Item.AreaBossId" class="form-control" />
+                    <span asp-validation-for="Item.AreaBossId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Item.Name" class="control-label"></label>
+                    <input asp-for="Item.Name" class="form-control" />
+                    <span asp-validation-for="Item.Name" class="text-danger"></span>
+                </div>
+                <input type="hidden" asp-for="Item.Id" />
+                <input type="hidden" asp-for="Item.RowVersion" />
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+    <div>
+        <a asp-page="./Index">Back to List</a>
+    </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@

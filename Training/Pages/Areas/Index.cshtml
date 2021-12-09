@@ -1,5 +1,5 @@
 ﻿@page
-@model Training.Pages.Areas.IndexModel
+@model Pages.AreasPage
 
 @{
     ViewData["Title"] = "Areas";
@@ -14,28 +14,34 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AreaData[0].AreaBossId)
+                @Html.DisplayNameFor(model => model.Items[0].AreaBossId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AreaData[0].Name)
+                @Html.DisplayNameFor(model => model.Items[0].AreaBossName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].Name)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.AreaData) {
+@foreach (var item in Model.Items) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.AreaBossId)
             </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.AreaBossName)
+            </th>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-           
+
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-page="./Edit" asp-route-handler="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-handler="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-handler="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
 }

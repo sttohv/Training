@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using Training.Data;
 using Training.Domain;
 using Training.Domain.Repos;

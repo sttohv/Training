@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Training.Data;
-using Training.Data.Common;
 
 namespace Training.Infra
 {

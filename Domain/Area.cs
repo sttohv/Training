@@ -1,6 +1,5 @@
 ﻿using System;
 using Training.Data;
-using Training.Data.Common;
 using Training.Domain.Common;
 using Training.Domain.Repos;
 

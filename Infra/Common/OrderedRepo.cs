@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Training.Aids;
 using Training.Core;
-using Training.Data.Common;
 using Training.Domain.Repos;
 
 namespace Training.Infra.Common
