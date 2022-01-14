@@ -1,5 +1,5 @@
 ﻿@model Pages.Common.BasePage
-@{ ViewData["Title"] = Model.PageTitle;
+@{ 
                 Layout = "_Layout";
                 var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
                 var nextDisabled = !Model.HasNextPage ? "disabled" : ""; }

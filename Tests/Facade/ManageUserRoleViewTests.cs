@@ -9,12 +9,12 @@ using Training.Facade.Common;
 
 namespace Training.Tests.Facade
 {
-    [TestClass]
-    public class ManageUserRoleViewTests: SealedClassTests<ManageUserRoleView, BaseView>
-    {
-        [TestMethod] public void RoleIdTest() => IsReadWriteProperty<string>();
-        [TestMethod] public void RoleNameTest() => IsReadWriteProperty<string>();
-        [TestMethod] public void SelectedTest() => IsReadWriteProperty<bool>();
+    //[TestClass]
+    //public class ManageUserRoleViewTests: SealedClassTests<ManageUserRoleView, BaseView>
+    //{
+    //    [TestMethod] public void RoleIdTest() => IsReadWriteProperty<string>();
+    //    [TestMethod] public void RoleNameTest() => IsReadWriteProperty<string>();
+    //    [TestMethod] public void SelectedTest() => IsReadWriteProperty<bool>();
 
-    }
+    //}
 }

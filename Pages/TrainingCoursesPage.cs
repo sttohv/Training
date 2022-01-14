@@ -7,11 +7,13 @@ using Training.Domain.Repos;
 using Training.Facade;
 using Training.Infra;
 using Training.Pages.Common;
+
 namespace Training.Pages
 {
     public class TrainingCoursesPage : ViewPage<TrainingCourse, TrainingCourseView>
     {
-        public override string PageTitle => "Training Courses";
+        //Ära näpi järgmist rida!
+        public override string PageTitle => "TrainingCourses";
         public TrainingCoursesPage(ApplicationDbContext c) : this(new TrainingCoursesRepo(c), c) { }
         protected internal TrainingCoursesPage(ITrainingCoursesRepo r, ApplicationDbContext c = null) : base(r, c) { }
         protected internal override TrainingCourseView toViewModel(TrainingCourse c)

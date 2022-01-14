@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\Users\**" />
-    <Content Remove="Pages\Users\**" />
-    <EmbeddedResource Remove="Pages\Users\**" />
-    <None Remove="Pages\Users\**" />
+    <Compile Remove="Pages\Clients\**" />
+    <Content Remove="Pages\Clients\**" />
+    <EmbeddedResource Remove="Pages\Clients\**" />
+    <None Remove="Pages\Clients\**" />
   </ItemGroup>
 
   <ItemGroup>
