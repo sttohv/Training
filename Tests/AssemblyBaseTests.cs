@@ -11,7 +11,7 @@ namespace Training.Tests
         protected AssemblyBaseTests(string assemblyName = null,
             string testAssemblyName = null)
         {
-            Assembly = assemblyName ?? "Contoso";
+            Assembly = assemblyName ?? "Library";
             var head = Assembly.GetHead();
             var tail = Assembly.GetTail();
             TestAssembly = testAssemblyName ?? $"{head}.Tests";

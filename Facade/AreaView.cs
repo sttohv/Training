@@ -7,6 +7,6 @@ namespace Training.Facade
     {
         [Display(Name = "Area Name")] public string Name { get; set; }
         [Display(Name = "Boss")] public string AreaBossId { get; set; }
-        [Display(Name = "Boss")] public string AreaBossName { get; set; }
+        [Display(Name = "Boss name")] public string AreaBossName { get; set; }
     }
 }
