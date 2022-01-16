@@ -12,9 +12,9 @@ namespace Training.Training.Pages.Enrollements
 {
     public class CreateModel : PageModel
     {
-        private readonly Training.Infra.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public CreateModel(Training.Infra.ApplicationDbContext context)
+        public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }

@@ -6,7 +6,7 @@ namespace Training.Aids
     public static class GetMember
     {
         public static string Name<TClass>(Expression<Func<TClass, object>> e)
-           => Safe.Run(() => Name(e?.Body), string.Empty);
+            => Safe.Run(() => Name(e?.Body), string.Empty);
 
         public static string Name<TClass, TResult>(Expression<Func<TClass, TResult>> e)
             => Safe.Run(() => Name(e?.Body), string.Empty);

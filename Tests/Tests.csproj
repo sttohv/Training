@@ -29,9 +29,4 @@
     <ProjectReference Include="..\Training\Training.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Infra\Common\" />
-    <Folder Include="Pages\Common\" />
-  </ItemGroup>
-
 </Project>

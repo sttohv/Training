@@ -12,9 +12,9 @@ namespace Training.Training.Pages.Enrollements
 {
     public class DeleteModel : PageModel
     {
-        private readonly Training.Infra.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public DeleteModel(Training.Infra.ApplicationDbContext context)
+        public DeleteModel(ApplicationDbContext context)
         {
             _context = context;
         }

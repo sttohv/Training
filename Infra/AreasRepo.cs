@@ -15,7 +15,7 @@ namespace Training.Infra
 
         protected internal override AreaData toData(Area e) => e?.Data ?? new AreaData();
 
-        public List<Area> GetByAdministratorId(string id)
+        public List<Area> GetByAreaBossId(string id)
             => getRelated(x => x.AreaBossId == id);
 
         //protected internal override IQueryable<AreaData> applyFilters(IQueryable<AreaData> query)

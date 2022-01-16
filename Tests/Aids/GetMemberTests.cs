@@ -4,7 +4,7 @@ using Training.Aids;
 namespace Training.Tests.Aids
 {
     [TestClass]
-    public class GetMemberTests: StaticClassTests
+    public class GetMemberTests
     {
 
         private readonly string stringField = null;
@@ -16,7 +16,7 @@ namespace Training.Tests.Aids
                 GetMember.Name<GetMemberTests>(x => x.stringField));
         [TestMethod]
         public void NameTestProperty()
-            => Assert.AreEqual("stringProperty",
+            => Assert.AreEqual("StringProperty",
                 GetMember.Name<GetMemberTests>(x => x.StringProperty));
         [TestMethod]
         public void NameTestFunction()

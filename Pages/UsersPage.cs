@@ -18,6 +18,14 @@ namespace Training.Pages
 
         protected internal UsersPage(IUsersRepo r, ApplicationDbContext c = null) : base(r, c) { }
 
+        //public SelectList TrainingCourses =>
+        //   new(context.TrainingCourses.OrderBy(x => x.Name).AsNoTracking(),
+        //       "Id", "Name");
+        //public bool IsAssigned(SelectListItem item)
+        //  => Item?.InstructorTrainingCourses?
+        //      .FirstOrDefault(x =>
+        //          x.CourseId == item.Value) is not null;
+
         protected internal override UserView toViewModel(User e)
         {
             if (isNull(e)) return null;

@@ -13,9 +13,9 @@ namespace Training.Training.Pages.Enrollements
 {
     public class EditModel : PageModel
     {
-        private readonly Training.Infra.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public EditModel(Training.Infra.ApplicationDbContext context)
+        public EditModel(ApplicationDbContext context)
         {
             _context = context;
         }
