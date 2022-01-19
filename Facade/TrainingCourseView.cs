@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Training.Facade.Common;
 
@@ -20,5 +21,7 @@ namespace Training.Facade
         //[DataType(DataType.Date)]
         [Display(Name = "Date")] public DateTime? CourseTime { get; set; }
 
+
+        [Display(Name = "Participants")] public List<EnrollementView> TrainingUsers { get; set; }
     }
 }

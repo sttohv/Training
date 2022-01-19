@@ -35,5 +35,13 @@ namespace Training.Domain
         public InstructorAssignement InstructorAssignement => instructorAssignement.Value;
         //oli enne internal
         internal Lazy<InstructorAssignement> instructorAssignement { get; }
+
+
+
+        public void AddParticipant(string userId)
+        {
+            if (userId is not null) NewlyAssignedParticipants?.Add(userId);
+        }
+        public List<string> NewlyAssignedParticipants { get; } = new();
     }
 }

@@ -26,6 +26,12 @@
             @Html.RowData(x => i.MaxPeopleInTraining)
             @Html.RowData(x => i.CourseTime)
             @Html.RowData(x => i.AreaId)
+            @*<td>
+                @foreach (var course in i.InstructorCourses)
+                {
+                    @course.Number @:  @course.Name <br />
+                }
+            </td>*@
             @Html.RowButtons(Model.PageUrl, $"{i.Id}")
         </tr>}
     </tbody>
