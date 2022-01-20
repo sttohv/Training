@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Training.Data;
 using Training.Domain;
+using Training.Domain.Common;
 using Training.Domain.Repos;
 using Training.Infra.Common;
 
@@ -23,62 +26,62 @@ namespace Training.Infra
 
         //instrucor on trainingCourse
         //courseass on enrollement
-        public override async Task<bool> DeleteAsync(Instructor e)
+        public override async Task<bool> DeleteAsync(TrainingCourse e)
         {
             await removeAssignments(e);
             var isOk = await base.DeleteAsync(e);
             await db.SaveChangesAsync();
             return isOk;
         }
-        public override async Task<bool> AddAsync(Instructor e)
+        public override async Task<bool> AddAsync(TrainingCourse e)
         {
             await updateAssignments(e);
             var isOk = await base.AddAsync(e);
             await db.SaveChangesAsync();
             return isOk;
         }
-        public override async Task<bool> UpdateAsync(Instructor e)
+        public override async Task<bool> UpdateAsync(TrainingCourse e)
         {
             await updateAssignments(e);
             var isOk = await base.UpdateAsync(e);
             await db.SaveChangesAsync();
             return isOk;
         }
-        internal static async Task removeAssignments(Instructor e)
+        internal static async Task removeAssignments(TrainingCourse e)
         {
-            await removeCourseAssignments(e?.CourseAssignments);
+            await removeCourseAssignments(e?.Enrollments);
         }
-        internal static async Task updateAssignments(Instructor i)
+        internal static async Task updateAssignments(TrainingCourse i)
         {
             await updateCourseAssignments(i);
         }
-        internal static async Task updateCourseAssignments(Instructor i)
+        internal static async Task updateCourseAssignments(TrainingCourse i)
         {
-            await removeCourseAssignments(i?.CourseAssignments, i?.NewlyAssignedCourses);
+            await removeCourseAssignments(i?.Enrollments, i?.NewlyAssignedCourses);
             await addCourseAssignments(i);
         }
 
-        internal static async Task addCourseAssignments(Instructor i)
+        internal static async Task addCourseAssignments(TrainingCourse i)
         {
             if (i is null) return;
-            var r = new GetRepo().Instance<ICourseAssignmentsRepo>();
+            var r = new GetRepo().Instance<IEnrollementsRepo>();
             foreach (var id in i.NewlyAssignedCourses)
             {
-                if (i.CourseAssignments?
-                    .FirstOrDefault(x => x.CourseId == id) is not null) continue;
-                var d = new CourseAssignmentData { CourseId = id, InstructorId = i.Id };
-                await r.AddAsync(new CourseAssignment(d));
+                if (i.Enrollments?
+                    .FirstOrDefault(x => x.TrainingCourseId == id) is not null) continue;
+                var d = new EnrollementData { TrainingCourseId = id, UserId = i.Id };
+                await r.AddAsync(new Enrollement(d));
             }
         }
 
         private static async Task removeCourseAssignments(
-            IEnumerable<CourseAssignment> l, ICollection<string> doNotRemove = null)
+            IEnumerable<Enrollement> l, ICollection<string> doNotRemove = null)
         {
             if (l is null) return;
-            var r = new GetRepo().Instance<ICourseAssignmentsRepo>();
+            var r = new GetRepo().Instance<IEnrollementsRepo>();
             foreach (var e in l)
             {
-                if (doNotRemove?.Contains(e.CourseId) ?? false) continue;
+                if (doNotRemove?.Contains(e.TrainingCourseId) ?? false) continue;
                 await r.DeleteAsync(e);
             }
         }

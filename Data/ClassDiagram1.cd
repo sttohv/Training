@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Training.Data.AreaData">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AreaData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training.Data.EnrollementData">
+    <Position X="12" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EnrollementData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training.Data.InstructorAssignementData">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIQAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstructorAssignementData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training.Data.TrainingCourseData">
+    <Position X="7.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAgEAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>TrainingCourseData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Training.Data.UserData">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAACAAAAAABAAAAAAAACAAACAAAAAgAAg=</HashCode>
+      <FileName>UserData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
