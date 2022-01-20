@@ -68,8 +68,8 @@ namespace Training.Infra
             foreach (var id in i.NewlyAssignedParticipants)
             {
                 if (i.Enrollments?
-                    .FirstOrDefault(x => x.TrainingCourseId == id) is not null) continue;
-                var d = new EnrollementData { TrainingCourseId = id, UserId = i.Id };
+                    .FirstOrDefault(x => x.UserId == id) is not null) continue;
+                var d = new EnrollementData { UserId = id, TrainingCourseId = i.Id };
                 await r.AddAsync(new Enrollement(d));
             }
         }
@@ -81,7 +81,7 @@ namespace Training.Infra
             var r = new GetRepo().Instance<IEnrollementsRepo>();
             foreach (var e in l)
             {
-                if (doNotRemove?.Contains(e.TrainingCourseId) ?? false) continue;
+                if (doNotRemove?.Contains(e.UserId) ?? false) continue;
                 await r.DeleteAsync(e);
             }
         }

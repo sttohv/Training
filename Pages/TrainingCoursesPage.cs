@@ -54,13 +54,13 @@ namespace Training.Pages
         {
             if (isNull(v)) return;
             var assignments = new List<EnrollementView>();
-            foreach (var course in selectedCourses ?? Array.Empty<string>())
+            foreach (var user in selectedCourses ?? Array.Empty<string>())
             {
-                var courseToAdd = new EnrollementView
+                var userToAdd = new EnrollementView
                 {
-                    TrainingCourseId = course
+                    UserId = user
                 };
-                assignments.Add(courseToAdd);
+                assignments.Add(userToAdd);
             }
 
             v.TrainingUsers = assignments;
@@ -69,12 +69,12 @@ namespace Training.Pages
             => doBeforeCreate(v, selectedCourses);
 
         internal static EnrollementView toCourseAssignmentView(Enrollement c)
-            => new() { TrainingCourseId = c.TrainingCourse.Id, UserId = c.User.Id, TrainingCourseTitle = c.TrainingCourse.Title, UserName = c.User.FullName };
+            => new() { UserId = c.User.Id, UserName = c.User.FullName };
         
         public bool IsAssigned(SelectListItem item)
             => Item?.TrainingUsers? 
                 .FirstOrDefault(x =>
-                    x.Id == item.Value) is not null;
+                    x.UserId == item.Value) is not null;
         
         public SelectList Users =>
             new(context.Users.OrderBy(x => x.FirstMidName).AsNoTracking(),

@@ -10,7 +10,7 @@ using Training.Infra;
 namespace Training.Infra.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211209130158_first")]
+    [Migration("20220120161540_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
