@@ -27,9 +27,9 @@
             @Html.RowData(x => i.CourseTime)
             @Html.RowData(x => i.AreaId)
             <td>
-                @foreach (var course in i.InstructorCourses)
+                @foreach (var users in i.TrainingUsers)
                 {
-                    @course.Number @:  @course.Name <br />
+                    @users.Number @:  @users.Name <br />
                 }
             </td>
             @Html.RowButtons(Model.PageUrl, $"{i.Id}")
