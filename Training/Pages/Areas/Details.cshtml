@@ -1,43 +1,5 @@
 ﻿@page
 @model Pages.AreasPage
+@{ Layout = "_Details"; }
 
-@{
-    ViewData["Title"] = "Details";
-}
-
-<h1>Details</h1>
-
-<div>
-    <h4>AreaData</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.AreaBossId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.AreaBossId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.AreaBossName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.AreaBossName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.RowVersion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.RowVersion)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-page="./Edit" asp-route-handler="Edit" asp-route-id="@Model.Item.Id">Edit</a> |
-    <a asp-page="./Index" asp-route-handler="Index">Back to List</a>
-</div>
+<partial name="_ShowArea" />

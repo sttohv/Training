@@ -13,7 +13,7 @@
             <tr>
             @{
                 int cnt = 0;
-                foreach (var course in Model.Courses)
+                foreach (var user in Model.Users)
                 {
                     if (cnt++ % 3 == 0)
                     {
@@ -22,9 +22,9 @@
                     @:<td>
                     <input type="checkbox"
                            name="selectedCourses"
-                           value="@course.Value"
-                           @(Html.Raw(Model.IsAssigned(course) ? "checked=\"checked\"" : "")) />
-                    @course.Text
+                           value="@user.Value"
+                           @(Html.Raw(Model.IsAssigned(user) ? "checked=\"checked\"" : "")) />
+                    @user.Text
                     @:</td>
                 }
                 @:</tr>

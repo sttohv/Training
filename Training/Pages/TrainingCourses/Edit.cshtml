@@ -1,51 +1,6 @@
 ﻿@page
 @model Pages.TrainingCoursesPage
 
-@{
-    ViewData["Title"] = "Edit";
-}
+@{ Layout = "_Edit"; }
 
-<h1>Edit</h1>
-
-<h4>TrainingCourseData</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Item.Title" class="control-label"></label>
-                <input asp-for="Item.Title" class="form-control" />
-                <span asp-validation-for="Item.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.AreaId" class="control-label"></label>
-                <input asp-for="Item.AreaId" class="form-control" />
-                <span asp-validation-for="Item.AreaId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.MaxPeopleInTraining" class="control-label"></label>
-                <input asp-for="Item.MaxPeopleInTraining" class="form-control" />
-                <span asp-validation-for="Item.MaxPeopleInTraining" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Item.CourseTime" class="control-label"></label>
-                <input asp-for="Item.CourseTime" class="form-control" />
-                <span asp-validation-for="Item.CourseTime" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Item.Id" />
-            <input type="hidden" asp-for="Item.RowVersion" />
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="./Index" asp-route-handler="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<partial name="_EditTrainingCourse" />

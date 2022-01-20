@@ -1,53 +1,6 @@
 ﻿@page
 @model Pages.TrainingCoursesPage
 
-@{
-    ViewData["Title"] = "Delete";
-}
+@{ Layout = "_Delete"; }
 
-<h1>Delete</h1>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>TrainingCourseData</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.AreaId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.AreaId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.MaxPeopleInTraining)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.MaxPeopleInTraining)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.CourseTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.CourseTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Item.RowVersion)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Item.RowVersion)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Item.Id" />
-        <input type="hidden" asp-for="Item.RowVersion" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index" asp-route-handler="Index">Back to List</a>
-    </form>
-</div>
+<partial name="_ShowTrainingCourse" />

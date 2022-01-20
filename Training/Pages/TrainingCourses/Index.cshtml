@@ -15,6 +15,7 @@
             @Html.TableSortHeader(x => x.Item.MaxPeopleInTraining, Model)
             @Html.TableSortHeader(x => x.Item.CourseTime, Model)
             @Html.TableHeader(x => x.Item.AreaId)
+            <th>Training users</th>
             <th></th>
         </tr>
     </thead>
@@ -25,11 +26,11 @@
             @Html.RowData(x => i.Title)
             @Html.RowData(x => i.MaxPeopleInTraining)
             @Html.RowData(x => i.CourseTime)
-            @Html.RowData(x => i.AreaId)
+            @Html.RowData(x => i.AreaName)
             <td>
                 @foreach (var users in i.TrainingUsers)
                 {
-                    @users.Number @:  @users.Name <br />
+                    @users.UserName  <br />
                 }
             </td>
             @Html.RowButtons(Model.PageUrl, $"{i.Id}")

@@ -20,22 +20,24 @@ namespace Training.Pages
         public override string PageTitle => "TrainingCourses";
         public TrainingCoursesPage(ApplicationDbContext c) : this(new TrainingCoursesRepo(c), c) { }
         protected internal TrainingCoursesPage(ITrainingCoursesRepo r, ApplicationDbContext c = null) : base(r, c) { }
+        
         protected internal override TrainingCourseView toViewModel(TrainingCourse c)
         {
             if (isNull(c)) return null;
             var v = Copy.Members(c.Data, new TrainingCourseView());
-            v.TrainingUsers = new List<EnrollementView>();
-            if (v.TrainingUsers is null) return v;
-            v.TrainingUsers.AddRange(v.TrainingUsers.Select(toCourseAssignmentView).ToList());
             v.AreaName = c.Area?.Name;
+            v.TrainingUsers = new List<EnrollementView>();
+            if (c.Enrollments is null) return v;
+            v.TrainingUsers.AddRange(c.Enrollments.Select(toCourseAssignmentView).ToList());
+            
             return v;
         }
         protected internal override TrainingCourse toEntity(TrainingCourseView c)
         {
             var d = Copy.Members(c, new TrainingCourseData());
             var obj = new TrainingCourse(d);
-            if (d?.InstructorCourses is null) return obj;
-            foreach (var c in d.InstructorCourses) obj.AddCourse(c?.CourseId);
+            if (c?.TrainingUsers is null) return obj;
+            foreach (var v in c.TrainingUsers) obj.AddParticipant(v?.UserId);
             return obj;
         }
         public SelectList Areas
@@ -67,12 +69,14 @@ namespace Training.Pages
             => doBeforeCreate(v, selectedCourses);
 
         internal static EnrollementView toCourseAssignmentView(Enrollement c)
-            => new() { TrainingCourseId = c.TrainingCourse.Id, UserId = c.User.Id, TrainingCourseTitle = c.TrainingCourse.Title };
+            => new() { TrainingCourseId = c.TrainingCourse.Id, UserId = c.User.Id, TrainingCourseTitle = c.TrainingCourse.Title, UserName = c.User.FullName };
+        
         public bool IsAssigned(SelectListItem item)
             => Item?.TrainingUsers? 
                 .FirstOrDefault(x =>
                     x.Id == item.Value) is not null;
-        public SelectList Courses =>
+        
+        public SelectList Users =>
             new(context.Users.OrderBy(x => x.FirstMidName).AsNoTracking(),
                 "Id", "FirstMidName");
     }
