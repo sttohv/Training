@@ -57,7 +57,7 @@ namespace Training.Infra
         }
         internal static async Task updateCourseAssignments(TrainingCourse i)
         {
-            await removeCourseAssignments(i?.Enrollments, i?.NewlyAssignedCourses);
+            await removeCourseAssignments(i?.Enrollments, i?.NewlyAssignedParticipants);
             await addCourseAssignments(i);
         }
 
@@ -65,7 +65,7 @@ namespace Training.Infra
         {
             if (i is null) return;
             var r = new GetRepo().Instance<IEnrollementsRepo>();
-            foreach (var id in i.NewlyAssignedCourses)
+            foreach (var id in i.NewlyAssignedParticipants)
             {
                 if (i.Enrollments?
                     .FirstOrDefault(x => x.TrainingCourseId == id) is not null) continue;

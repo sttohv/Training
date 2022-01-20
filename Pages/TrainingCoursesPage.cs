@@ -9,6 +9,8 @@ using Training.Domain.Repos;
 using Training.Facade;
 using Training.Infra;
 using Training.Pages.Common;
+using System;
+using System.Collections.Generic;
 
 namespace Training.Pages
 {
@@ -22,9 +24,9 @@ namespace Training.Pages
         {
             if (isNull(c)) return null;
             var v = Copy.Members(c.Data, new TrainingCourseView());
-            //v.InstructorCourses = new List<CourseAssignmentView>();
-            //if (i.CourseAssignments is null) return v;
-            //v.InstructorCourses.AddRange(i.CourseAssignments.Select(toCourseAssignmentView).ToList());
+            v.TrainingUsers = new List<EnrollementView>();
+            if (v.TrainingUsers is null) return v;
+            v.TrainingUsers.AddRange(v.TrainingUsers.Select(toCourseAssignmentView).ToList());
             v.AreaName = c.Area?.Name;
             return v;
         }
@@ -32,8 +34,8 @@ namespace Training.Pages
         {
             var d = Copy.Members(c, new TrainingCourseData());
             var obj = new TrainingCourse(d);
-            //if (v?.InstructorCourses is null) return obj;
-            //foreach (var c in v.InstructorCourses) obj.AddCourse(c?.CourseId);
+            if (d?.InstructorCourses is null) return obj;
+            foreach (var c in d.InstructorCourses) obj.AddCourse(c?.CourseId);
             return obj;
         }
         public SelectList Areas
@@ -46,29 +48,30 @@ namespace Training.Pages
         }
 
 
-        protected internal override void doBeforeCreate(InstructorView v, string[] selectedCourses = null)
+        protected internal override void doBeforeCreate(TrainingCourseView v, string[] selectedCourses = null)
         {
             if (isNull(v)) return;
-            var assignments = new List<CourseAssignmentView>();
+            var assignments = new List<EnrollementView>();
             foreach (var course in selectedCourses ?? Array.Empty<string>())
             {
-                var courseToAdd = new CourseAssignmentView
+                var courseToAdd = new EnrollementView
                 {
-                    CourseId = course
+                    TrainingCourseId = course
                 };
                 assignments.Add(courseToAdd);
             }
 
-            v.InstructorCourses = assignments;
+            v.TrainingUsers = assignments;
         }
-        protected internal override void doBeforeEdit(InstructorView v, string[] selectedCourses = null)
+        protected internal override void doBeforeEdit(TrainingCourseView v, string[] selectedCourses = null)
             => doBeforeCreate(v, selectedCourses);
-        internal static CourseAssignmentView toCourseAssignmentView(CourseAssignment c)
-            => new() { CourseId = c.Course.Id, Number = c.Course.Number, Name = c.Course.Name };
+
+        internal static EnrollementView toCourseAssignmentView(Enrollement c)
+            => new() { TrainingCourseId = c.TrainingCourse.Id, UserId = c.User.Id, TrainingCourseTitle = c.TrainingCourse.Title };
         public bool IsAssigned(SelectListItem item)
-            => Item?.InstructorCourses? //facade list nimi
+            => Item?.TrainingUsers? 
                 .FirstOrDefault(x =>
-                    x.CourseId == item.Value) is not null;
+                    x.Id == item.Value) is not null;
         public SelectList Courses =>
             new(context.Users.OrderBy(x => x.FirstMidName).AsNoTracking(),
                 "Id", "FirstMidName");
