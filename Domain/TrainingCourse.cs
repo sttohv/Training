@@ -27,15 +27,11 @@ namespace Training.Domain
 
         public ICollection<User> Users => Enrollments?.Select(x => x.User).ToList();
         public ICollection<Enrollement> Enrollments => enrollements.Value;
-        
-        //oli enne internal
         internal Lazy<ICollection<Enrollement>> enrollements { get; }
 
 
         public InstructorAssignement InstructorAssignement => instructorAssignement.Value;
-        //oli enne internal
         internal Lazy<InstructorAssignement> instructorAssignement { get; }
-
 
 
         public void AddParticipant(string userId)

@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Training.Facade
 {
-    //TODO: something
     public sealed class UserView : IdentityUser, IBaseEntityView
     {
 
@@ -38,14 +37,7 @@ namespace Training.Facade
         [Display(Name = "Contact Ending Date")]
         public DateTime ValidTo { get; set; }
        
-        //public string Id { get; set; }
         public byte[] RowVersion { get; set; }
 
-        //string IBaseEntity.Id => throw new NotImplementedException();
-
-        //byte[] IBaseEntity.RowVersion => throw new NotImplementedException();
-
-
-        //kuidas siia lisan, kes 
     }
 }

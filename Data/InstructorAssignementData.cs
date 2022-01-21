@@ -6,6 +6,6 @@ namespace Training.Data
     {
         public string TrainingCourseId { get; set; }
         public string UserId { get; set; } //peab checkima kas person.type == instructor
-        public string Location { get; set; } //kas on vaja? nice to have
+        public string Location { get; set; }
     }
 }
